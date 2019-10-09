@@ -1,0 +1,17 @@
+{
+    "name": "coding-problems",
+    "version": "1.0.0",
+    "description": "Leet code problems and solutions",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "kometa",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^24.9.0"
+    },
+    "dependencies": {
+        "@types/jest": "^24.0.18"
+    }
+}
