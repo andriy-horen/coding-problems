@@ -1,16 +1,17 @@
 function reverse(n) {
-    let abs = n < 0 ? -n : n;
+    let negative = n < 0;
+    n = negative ? -n : n;
     let reversed = 0;
-    while (abs > 0) {
-        reversed = reversed * 10 + (abs % 10);
-        abs = Math.floor(abs / 10);
+    while (n > 0) {
+        reversed = reversed * 10 + (n % 10);
+        n = Math.floor(n / 10);
     }
 
-    if (reversed < -0x80000000 || reversed > 0x7fffffff) {
+    if (reversed > 0x7fffffff) {
         return 0;
     }
 
-    return n < 0 ? -reversed : reversed;
+    return negative ? -reversed : reversed;
 }
 test.each([[1234, 4321], [-540, -45]])('7. Reverse Integer', (input, expected) => {
     const result = reverse(input);
