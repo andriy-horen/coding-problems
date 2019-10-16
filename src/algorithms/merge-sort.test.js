@@ -32,11 +32,11 @@ function merge(left, right) {
 }
 
 test('merge sort', () => {
-    const array = Array(10 ** 5)
+    const array = Array(10 ** 4)
         .fill(0)
-        .map(_ => Math.floor(Math.random() * 10 ** 12));
+        .map(_ => Math.floor(Math.random() * 10 ** 5));
     const sorted = mergeSort(array);
-    const isSorted = sorted.every((e, i, arr) => arr[i] < arr[i + 1] || Infinity);
+    const isSorted = sorted.every((_, i, arr) => arr[i] <= (arr[i + 1] || Infinity));
 
     expect(isSorted).toBe(true);
 });
